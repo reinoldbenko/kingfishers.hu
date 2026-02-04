@@ -28,7 +28,7 @@
             min-height: 100vh;
         }
 
-        /* Filmový šum */
+        /* Filmový šum pre textúru */
         body::before {
             content: "";
             position: fixed;
@@ -41,102 +41,74 @@
         }
 
         .container {
-            max-width: 1300px;
+            max-width: 900px; /* Užšie pre lepšiu čitateľnosť textu */
             width: 100%;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 60px;
-        }
-
-        /* Sekcia s textom a prvým obrázkom */
-        .hero-split {
-            display: flex;
-            align-items: center;
-            gap: 50px;
+            padding: 60px 40px;
+            position: relative;
+            z-index: 20;
         }
 
         .text-box {
-            flex: 1;
+            text-align: left;
         }
 
-        .text-box h2 {
-            font-size: 3.5rem;
+        /* Hlavný nadpis ako vizuálny prvok */
+        .text-box h1 {
+            font-size: clamp(3rem, 15vw, 8rem);
             font-weight: 900;
-            margin: 0 0 20px 0;
-            letter-spacing: -2px;
-            line-height: 0.9;
+            margin: 0 0 40px 0;
+            letter-spacing: -4px;
+            line-height: 0.8;
             text-transform: uppercase;
+            color: var(--text-main);
+            border-bottom: 8px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 10px;
         }
 
         .text-box p {
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            line-height: 1.6;
             color: var(--text-dim);
             font-weight: 300;
-            max-width: 500px;
+            text-align: justify;
+            margin-top: 40px;
         }
 
-        /* Boxy pre obrázky */
-        .image-box {
-            flex: 1.2;
-            overflow: hidden;
-            border-radius: 4px;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.6);
-            position: relative;
+        /* Jemný detail v pozadí */
+        .bg-watermark {
+            position: fixed;
+            bottom: -50px;
+            right: -20px;
+            font-size: 20rem;
+            font-weight: 900;
+            color: rgba(255,255,255,0.02);
+            pointer-events: none;
+            z-index: 1;
+            text-transform: uppercase;
         }
 
-        .image-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
-        }
-
-        .image-box:hover img {
-            transform: scale(1.07);
-        }
-
-        /* Druhý samostatný obrázok pod tým (alebo vedľa) */
-        .secondary-image {
-            width: 100%;
-            max-height: 600px;
-        }
-
-        /* Responzivita */
-        @media (max-width: 1024px) {
-            .hero-split {
-                flex-direction: column;
-                text-align: center;
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
             }
-            .text-box p {
-                margin: 0 auto;
+            .text-box h1 {
+                letter-spacing: -2px;
             }
         }
     </style>
 </head>
 <body>
 
+    <div class="bg-watermark">KF</div>
+
     <div class="container">
-        
-        <section class="hero-split">
-            <div class="text-box">
-                <h2>KINGFISHERS</h2>
-                <p>
-                    A háromtagú Kingfishers zenekar a kemény riffeket dallamos énekkel ötvözi, sajátos hangzásvilágot teremtve a hazai színtéren. Egy nagylemez és egy EP, valamint számos videóklip van már mögöttünk. Színpadra léptünk többek között az A38 Hajón, a Barba Negrában, vidéki klubokban, és olyan felvidéki fesztiválokon, mint a Gombaszögi Nyári Tábor és a Hajómalom Fesztivál. Láthattatok minket az M2 Petőfi TV és Duna TV műsoraiban, hallhattatok a Petőfi Rádióban, Érd FM-en, és több felvidéki rádióban is.
-                </p>
-            </div>
-            
-            <div class="image-box">
-                <img src="https://drive.google.com/file/d/1mQfO4mWr0RmbtX9j7CpGzMwBrPN1x1es/view?usp=share_link" alt="Kingfishers band">
-            </div>
+        <section class="text-box">
+            <h1>KINGFISHERS</h1>
+            <p>
+                A háromtagú Kingfishers zenekar a kemény riffeket dallamos énekkel ötvözi, sajátos hangzásvilágot teremtve a hazai színtéren. Egy nagylemez és egy EP, valamint számos videóklip van már mögöttünk. Színpadra léptünk többek között az A38 Hajón, a Barba Negrában, vidéki klubokban, és olyan felvidéki fesztiválokon, mint a Gombaszögi Nyári Tábor és a Hajómalom Fesztivál. Láthattatok minket az M2 Petőfi TV és Duna TV műsoraiban, hallhattatok a Petőfi Rádióban, Érd FM-en, és több felvidéki rádióban is.
+            </p>
         </section>
-
-        <div class="image-box secondary-image">
-            <img src="https://drive.google.com/file/d/1mQfO4mWr0RmbtX9j7CpGzMwBrPN1x1es/view?usp=share_link" alt="Kingfishers">
-        </div>
-
     </div>
 
 </body>
