@@ -1,6 +1,216 @@
 <!DOCTYPE html>
-<html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kingfishers.hu | Svet rybárikov</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS RESET & ZÁKLAD */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fbfb;
+        }
+
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* NAVIGÁCIA */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #005f73;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #0a9396;
+        }
+
+        /* SEKCIY - SPOLOČNÉ */
+        section {
+            min-height: 100vh;
+            padding: 100px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* HERO SEKCIÁ */
+        #home {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1549416878-b9ca95e26903?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+
+        #home h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            background: #ee9b00;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .btn:hover {
+            background: #ca6702;
+            transform: translateY(-3px);
+        }
+
+        /* O NÁS */
+        #about {
+            background-color: white;
+        }
+
+        #about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #005f73;
+        }
+
+        #about p {
+            max-width: 700px;
+            font-size: 1.1rem;
+        }
+
+        /* GALÉRIA */
+        #gallery {
+            background-color: #e9ecef;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        .grid-item {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            transition: transform 0.4s;
+            cursor: pointer;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.03);
+        }
+
+        /* KONTAKT */
+        footer {
+            padding: 50px;
+            background: #001219;
+            color: white;
+            text-align: center;
+        }
+
+        /* MOBILNÁ RESPONSIVITA */
+        @media (max-width: 768px) {
+            nav { padding: 15px 20px; }
+            nav ul { display: none; } /* Pre jednoduchosť skryté, ideálne pre hamburger menu */
+        }
+    </style>
+</head>
 <body>
-  <h1>Szia! A weboldalam működik!</h1>
+
+    <nav>
+        <a href="#" class="logo">KINGFISHERS.hu</a>
+        <ul>
+            <li><a href="#home">Domov</a></li>
+            <li><a href="#about">O nás</a></li>
+            <li><a href="#gallery">Galéria</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1>Vstúpte do sveta rybárikov</h1>
+        <p style="font-size: 1.5rem; margin-bottom: 30px;">Krása prírody zachytená v každom detaile.</p>
+        <a href="#about" class="btn">Zistiť viac</a>
+    </section>
+
+    <section id="about">
+        <h2>O projekte Kingfishers</h2>
+        <p>
+            Vítajte na stránke venovanej jednému z najfascinujúcejších vtákov našej prírody. 
+            Rybárik riečny je symbolom čistých vôd a trpezlivosti. Táto stránka slúži ako 
+            statická prezentácia krásy, ktorú môžeme nájsť v maďarskej a stredoeurópskej faune.
+        </p>
+    </section>
+
+    <section id="gallery">
+        <h2>Vizuálna inšpirácia</h2>
+        <div class="grid">
+            <div class="grid-item" style="background-image: url('https://images.unsplash.com/photo-1549416878-b9ca95e26903?auto=format&fit=crop&q=60&w=600');"></div>
+            <div class="grid-item" style="background-image: url('https://images.unsplash.com/photo-1620580129528-66177113886f?auto=format&fit=crop&q=60&w=600');"></div>
+            <div class="grid-item" style="background-image: url('https://images.unsplash.com/photo-1541434388484-9781bc598971?auto=format&fit=crop&q=60&w=600');"></div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2 style="margin-bottom: 20px;">Kontaktujte nás</h2>
+        <p>Email: info@kingfishers.hu</p>
+        <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 Kingfishers.hu. Všetky práva vyhradené.</p>
+    </footer>
+
 </body>
 </html>
