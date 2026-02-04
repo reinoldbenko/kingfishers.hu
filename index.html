@@ -58,11 +58,10 @@
         .social-icons a { color: white; font-size: 1.1rem; transition: 0.3s; opacity: 0.7; }
         .social-icons a:hover { color: var(--accent-color); opacity: 1; transform: translateY(-3px); }
 
-        /* HERO - Kijavított Direct Link a háttérnek */
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), 
-                        url('https://i.postimg.cc/06sh2QLj/BSR00420-ret.jpg'); 
+                        url('https://i.postimg.cc/SNnj3RgC/unnamed.jpg'); 
             background-size: cover;
             background-position: center;
             display: flex;
@@ -81,12 +80,34 @@
             text-shadow: 2px 2px 30px rgba(0,0,0,0.8);
         }
 
-        .hero p {
-            font-size: 1rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
+        /* Rólunk Szekció Stílusa */
+        .about-section {
+            padding: 120px 15%;
+            background-color: #0f0f0f;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .about-text {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #ccc;
+        }
+
+        .highlight {
             color: var(--accent-color);
-            margin-top: 20px;
+            font-weight: 400;
+        }
+
+        .section-title {
+            color: var(--accent-color);
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
         }
 
         /* Galéria */
@@ -108,23 +129,14 @@
             position: relative;
             border: 1px solid rgba(0, 255, 255, 0.1);
             aspect-ratio: 16 / 9;
-            cursor: pointer;
         }
 
         .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s ease;
+            width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;
         }
 
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .gallery-item:hover {
-            border-color: var(--accent-color);
-        }
+        .gallery-item:hover img { transform: scale(1.05); }
+        .gallery-item:hover { border-color: var(--accent-color); }
 
         /* Kapcsolat */
         .content-section {
@@ -142,6 +154,7 @@
             nav { padding: 15px 20px; flex-direction: column; }
             .social-icons { margin: 15px 0 0 0; }
             nav ul li { margin: 10px 0; }
+            .about-section { padding: 80px 10%; }
         }
     </style>
 </head>
@@ -152,6 +165,7 @@
         <div class="nav-content">
             <ul>
                 <li><a href="#kezdolap">Kezdőlap</a></li>
+                <li><a href="#rolunk">Rólunk</a></li>
                 <li><a href="#galeria">Galéria</a></li>
                 <li><a href="#kapcsolat">Kapcsolat</a></li>
             </ul>
@@ -166,23 +180,34 @@
 
     <section id="kezdolap" class="hero">
         <h1>Kingfishers</h1>
-        <p>Modern | Kifinomult | Dallamos</p>
+        <p style="color: var(--accent-color); letter-spacing: 5px; text-transform: uppercase;">Modern | Kifinomult | Dallamos</p>
+    </section>
+
+    <section id="rolunk" class="about-section">
+        <h2 class="section-title">Rólunk</h2>
+        <div class="about-text">
+            Mi vagyunk a <span class="highlight">Kingfishers</span>, egy háromtagú rockzenekar, amely a kemény riffeket dallamos énekkel ötvözi, sajátos hangzásvilágot teremtve a hazai színtéren. 
+            <br><br>
+            Egy nagylemez és egy EP, valamint számos videóklip van már mögöttünk. Színpadra léptünk többek között az <span class="highlight">A38 Hajón</span>, a <span class="highlight">Barba Negrában</span>, vidéki klubokban, valamint olyan felvidéki fesztiválokon, mint a <span class="highlight">Gombaszögi Nyári Tábor</span> és a <span class="highlight">Hajómalom Fesztivál</span>. 
+            <br><br>
+            Láthattatok minket az <span class="highlight">M2 Petőfi TV</span> és a <span class="highlight">Duna TV</span> műsoraiban, hallhattatok a <span class="highlight">Petőfi Rádióban</span>, az <span class="highlight">Érd FM</span>-en, illetve több felvidéki rádióban is.
+        </div>
     </section>
 
     <section id="galeria" class="gallery-section">
-        <h2 style="color: var(--accent-color); font-family: 'Playfair Display', serif; font-size: 2.2rem; letter-spacing: 3px;">GALÉRIA</h2>
+        <h2 class="section-title">Galéria</h2>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="https://i.postimg.cc/nCpRNgff/kingfishers-klip2025-1.jpg" alt="Kingfishers 1">
+                <img src="https://i.postimg.cc/K8rbHyhM/BSR00170-ret-2.png" alt="Kingfishers 1">
             </div>
             <div class="gallery-item">
-                <img src="https://i.postimg.cc/jC40WzsY/kingfishers-klip2025-2.jpg" alt="Kingfishers 2">
+                <img src="https://i.postimg.cc/y8V6BNPD/kingfishers-comp-2.png" alt="Kingfishers 2">
             </div>
         </div>
     </section>
 
     <section id="kapcsolat" class="content-section">
-        <h2 style="color: var(--accent-color); font-family: 'Playfair Display', serif; font-size: 2.2rem; letter-spacing: 3px;">KAPCSOLAT</h2>
+        <h2 class="section-title">Kapcsolat</h2>
         <p>Koncertszervezés és management:</p>
         <p style="color: var(--accent-color); font-size: 1.2rem; margin-top: 10px; font-weight: bold;">kingfishersband@gmail.com</p>
     </section>
