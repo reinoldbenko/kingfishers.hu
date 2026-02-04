@@ -9,10 +9,10 @@
     
     <style>
         :root {
-            --bg-color: #0a0a0a;
+            --bg-color: #050505;
             --text-color: #ffffff;
-            --accent-color: #d4af37; 
-            --nav-bg: rgba(0, 0, 0, 0.95);
+            --accent-color: #00ffff; /* Cyan */
+            --nav-bg: rgba(0, 0, 0, 0.9);
         }
 
         body, html {
@@ -22,6 +22,19 @@
             color: var(--text-color);
             font-family: 'Montserrat', sans-serif;
             scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* Beúszó animáció definíciója */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Navigáció */
@@ -36,7 +49,7 @@
             background: var(--nav-bg);
             z-index: 1000;
             box-sizing: border-box;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.15);
         }
 
         .logo {
@@ -76,9 +89,9 @@
 
         nav ul li a:hover {
             color: var(--accent-color);
+            text-shadow: 0 0 5px var(--accent-color);
         }
 
-        /* Közösségi Ikonok Stílusa */
         .social-icons {
             display: flex;
             gap: 20px;
@@ -89,20 +102,21 @@
             color: white;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            opacity: 0.7;
+            opacity: 0.8;
         }
 
         .social-icons a:hover {
             color: var(--accent-color);
             opacity: 1;
             transform: translateY(-3px);
+            text-shadow: 0 0 10px var(--accent-color);
         }
 
-        /* Hero Szekció */
+        /* Hero Szekció az ÚJ KÉPPEL */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.4)), 
-                        url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'); 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), 
+                        url('https://i.postimg.cc/06sh2QLj/BSR00420-ret.jpg'); 
             background-size: cover;
             background-position: center;
             display: flex;
@@ -118,6 +132,7 @@
             margin: 0;
             text-transform: uppercase;
             letter-spacing: 8px;
+            animation: fadeInUp 1.2s ease-out forwards; /* Animáció alkalmazása */
         }
 
         .hero p {
@@ -126,30 +141,34 @@
             text-transform: uppercase;
             color: var(--accent-color);
             margin-top: 20px;
+            text-shadow: 0 0 10px rgba(0,255,255,0.3);
+            animation: fadeInUp 1.5s ease-out forwards; /* Kicsit lassabb beúszás a szövegnek */
         }
 
-        /* Szekciók */
+        /* Kapcsolat Szekció */
         .content-section {
-            padding: 100px 10%;
+            padding: 120px 10%;
             text-align: center;
+            background: #080808;
         }
 
         .content-section h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            margin-bottom: 40px;
-            letter-spacing: 3px;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
         }
 
         /* Footer */
         footer {
-            padding: 80px 20px;
+            padding: 60px 20px;
             text-align: center;
-            background: #050505;
+            background: #000;
+            border-top: 1px solid rgba(0, 255, 255, 0.05);
         }
 
         .footer-socials {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             display: flex;
             justify-content: center;
             gap: 25px;
@@ -172,11 +191,11 @@
             text-transform: uppercase;
         }
 
-        /* Mobil nézet */
         @media (max-width: 900px) {
             nav { padding: 15px 20px; flex-direction: column; }
             .social-icons { margin: 15px 0 0 0; }
             nav ul li { margin: 10px 0; }
+            .hero h1 { font-size: 3.2rem; }
         }
     </style>
 </head>
@@ -187,14 +206,13 @@
         <div class="nav-content">
             <ul>
                 <li><a href="#kezdolap">Kezdőlap</a></li>
-                <li><a href="#zene">Zene</a></li>
                 <li><a href="#kapcsolat">Kapcsolat</a></li>
             </ul>
             <div class="social-icons">
-                <a href="https://www.facebook.com/kingfishersofficial/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/kingfishersband/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://open.spotify.com/artist/4INiKAjzSLqOMxkM9614bc" target="_blank" title="Spotify"><i class="fab fa-spotify"></i></a>
-                <a href="https://www.youtube.com/@kingfishersofficial" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/kingfishersofficial/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/kingfishersband/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://open.spotify.com/artist/4INiKAjzSLqOMxkM9614bc" target="_blank"><i class="fab fa-spotify"></i></a>
+                <a href="https://www.youtube.com/@kingfishersofficial" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </nav>
@@ -204,12 +222,10 @@
         <p>Modern | Kifinomult | Dallamos</p>
     </section>
 
-    
-
-    <section id="kapcsolat" class="content-section" style="background: #0e0e0e;">
+    <section id="kapcsolat" class="content-section">
         <h2>Kapcsolat</h2>
         <p>Koncertszervezés és management:</p>
-        <p style="color: var(--accent-color); font-size: 1.2rem; margin-top: 10px;">kingfishersband@gmail.com</p>
+        <p style="color: var(--accent-color); font-size: 1.2rem; margin-top: 15px; font-weight: bold; letter-spacing: 1px;">kingfishersband@gmail.com</p>
     </section>
 
     <footer>
@@ -224,3 +240,5 @@
         </div>
     </footer>
 
+</body>
+</html>
