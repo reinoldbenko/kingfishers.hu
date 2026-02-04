@@ -23,7 +23,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Navigáció */
         nav {
             position: fixed; top: 0; width: 100%;
             display: flex; justify-content: space-between; align-items: center;
@@ -49,7 +48,6 @@
         .social-icons a { color: white; font-size: 1.1rem; transition: 0.3s; opacity: 0.7; }
         .social-icons a:hover { color: var(--accent-color); opacity: 1; transform: translateY(-3px); }
 
-        /* Hero */
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url('unnamed.jpg'); 
@@ -66,16 +64,30 @@
 
         .section-title {
             color: var(--accent-color); font-family: 'Playfair Display', serif;
-            font-size: 2.2rem; letter-spacing: 3px; margin-bottom: 50px;
+            font-size: 2.5rem; letter-spacing: 4px; margin-bottom: 50px;
             text-transform: uppercase; text-align: center;
         }
 
-        /* Rólunk */
-        .about-section { padding: 120px 15%; background-color: #0f0f0f; text-align: center; line-height: 1.8; }
-        .about-text { max-width: 900px; margin: 0 auto; font-size: 1.1rem; font-weight: 300; color: #ccc; }
-        .highlight { color: var(--accent-color); font-weight: 400; }
+        /* JAVÍTOTT RÓLUNK SZEKCIÓ */
+        .about-section { 
+            padding: 120px 10%; 
+            background-color: #0f0f0f; 
+            text-align: center; 
+        }
+        .about-text { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            font-size: 1.25rem; /* Nagyobb betűméret */
+            line-height: 1.9; /* Átláthatóbb sorköz */
+            font-weight: 300; 
+            color: #eeeeee; 
+        }
+        .highlight { 
+            color: var(--accent-color); 
+            font-weight: 600; 
+            text-transform: none;
+        }
 
-        /* Videók */
         .video-section { padding: 100px 5%; background-color: #050505; }
         .video-grid { 
             display: grid; 
@@ -92,7 +104,6 @@
         .video-container:hover { border-color: var(--accent-color); transform: translateY(-5px); }
         .video-title { margin-top: 15px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-color); text-align: center; }
 
-        /* Spotify Szekció */
         .spotify-section { padding: 80px 10%; background-color: #0a0a0a; text-align: center; }
         .spotify-player-wrapper {
             max-width: 800px; margin: 0 auto;
@@ -100,27 +111,22 @@
             border-radius: 12px; overflow: hidden;
             transition: 0.3s;
         }
-        .spotify-player-wrapper:hover { border-color: var(--accent-color); transform: scale(1.01); }
 
-        /* Galéria */
         .gallery-section { padding: 100px 10%; background-color: #0f0f0f; text-align: center; }
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-top: 40px; }
         .gallery-item { overflow: hidden; position: relative; border: 1px solid rgba(0, 255, 255, 0.1); aspect-ratio: 16 / 9; }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
-        .gallery-item:hover img { transform: scale(1.05); }
         .gallery-item:hover { border-color: var(--accent-color); }
 
-        /* Kapcsolat */
         .content-section { padding: 100px 10%; text-align: center; background: #050505; }
         footer { padding: 60px 20px; text-align: center; background: #000; }
         .footer-socials { margin-bottom: 20px; display: flex; justify-content: center; gap: 25px; }
         .footer-socials a { color: #fff; font-size: 1.5rem; transition: 0.3s; }
-        .footer-socials a:hover { color: var(--accent-color); }
 
         @media (max-width: 800px) {
             nav { padding: 15px 20px; flex-direction: column; }
             .social-icons { margin: 15px 0 0 0; }
-            nav ul li { margin: 10px 0; }
+            .about-text { font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -140,7 +146,7 @@
             <div class="social-icons">
                 <a href="https://www.facebook.com/kingfishersofficial/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/kingfishersband/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://open.spotify.com/artist/5C6hI1Y4t4eX4yqR1Tz3Vw" target="_blank"><i class="fab fa-spotify"></i></a>
+                <a href="https://open.spotify.com/artist/5GAt8Xy2jS0YfX6DInFvjX" target="_blank"><i class="fab fa-spotify"></i></a>
                 <a href="https://www.youtube.com/@kingfishersofficial" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
@@ -154,7 +160,11 @@
     <section id="rolunk" class="about-section">
         <h2 class="section-title">Rólunk</h2>
         <div class="about-text">
-            Mi vagyunk a <span class="highlight">Kingfishers</span>, egy háromtagú rockzenekar, amely a kemény riffeket dallamos énekkel ötvözi, sajátos hangzásvilágot teremtve a hazai színtéren.
+            Mi vagyunk a <span class="highlight">Kingfishers</span>. Egy háromtagú rockzenekar, amely a kemény riffeket dallamos énekkel ötvözi, sajátos hangzásvilágot teremtve a hazai színtéren. Egy nagylemez és egy EP, valamint számos videóklip van már mögöttünk. 
+            <br><br>
+            Színpadra léptünk többek között az <span class="highlight">A38 Hajón</span>, a <span class="highlight">Barba Negrában</span>, vidéki klubokban, valamint olyan felvidéki fesztiválokon, mint a <span class="highlight">Gombaszögi Nyári Tábor</span> és a <span class="highlight">Hajómalom Fesztivál</span>. 
+            <br><br>
+            Láthattatok minket az <span class="highlight">M2 Petőfi TV</span> és a <span class="highlight">Duna TV</span> műsoraiban, hallhattatok a <span class="highlight">Petőfi Rádióban</span>, az <span class="highlight">Érd FM-en</span>, illetve több felvidéki rádióban is.
         </div>
     </section>
 
@@ -183,7 +193,7 @@
     <section id="zene" class="spotify-section">
         <h2 class="section-title">Hallgass minket</h2>
         <div class="spotify-player-wrapper">
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/5C6hI1Y4t4eX4yqR1Tz3Vw?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/5GAt8Xy2jS0YfX6DInFvjX?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
     </section>
 
@@ -206,7 +216,7 @@
         <div class="footer-socials">
             <a href="https://www.facebook.com/kingfishersofficial/" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/kingfishersband/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://open.spotify.com/artist/5C6hI1Y4t4eX4yqR1Tz3Vw" target="_blank"><i class="fab fa-spotify"></i></a>
+            <a href="https://open.spotify.com/artist/5GAt8Xy2jS0YfX6DInFvjX" target="_blank"><i class="fab fa-spotify"></i></a>
             <a href="https://www.youtube.com/@kingfishersofficial" target="_blank"><i class="fab fa-youtube"></i></a>
         </div>
         <div class="copyright">© 2026 Kingfishers Zenekar. Minden jog fenntartva.</div>
