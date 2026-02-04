@@ -9,10 +9,10 @@
     
     <style>
         :root {
-            --bg-color: #050505;
+            --bg-color: #0a0a0a;
             --text-color: #ffffff;
-            --accent-color: #00ffff; /* Cyan */
-            --nav-bg: rgba(0, 0, 0, 0.9);
+            --accent-color: #00ffff;
+            --nav-bg: rgba(0, 0, 0, 0.95);
         }
 
         body, html {
@@ -22,19 +22,6 @@
             color: var(--text-color);
             font-family: 'Montserrat', sans-serif;
             scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-
-        /* Beúszó animáció definíciója */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         /* Navigáció */
@@ -49,7 +36,7 @@
             background: var(--nav-bg);
             z-index: 1000;
             box-sizing: border-box;
-            border-bottom: 1px solid rgba(0, 255, 255, 0.15);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
         }
 
         .logo {
@@ -60,6 +47,7 @@
             text-transform: uppercase;
             color: var(--accent-color);
             text-decoration: none;
+            transition: 0.3s;
         }
 
         .nav-content {
@@ -89,7 +77,6 @@
 
         nav ul li a:hover {
             color: var(--accent-color);
-            text-shadow: 0 0 5px var(--accent-color);
         }
 
         .social-icons {
@@ -101,21 +88,20 @@
         .social-icons a {
             color: white;
             font-size: 1.1rem;
-            transition: all 0.3s ease;
-            opacity: 0.8;
+            transition: 0.3s;
+            opacity: 0.7;
         }
 
         .social-icons a:hover {
             color: var(--accent-color);
             opacity: 1;
             transform: translateY(-3px);
-            text-shadow: 0 0 10px var(--accent-color);
         }
 
-        /* Hero Szekció az ÚJ KÉPPEL */
+        /* Hero Szekció - ÚJ HÁTTÉRKÉP */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), 
                         url('https://i.postimg.cc/06sh2QLj/BSR00420-ret.jpg'); 
             background-size: cover;
             background-position: center;
@@ -132,7 +118,7 @@
             margin: 0;
             text-transform: uppercase;
             letter-spacing: 8px;
-            animation: fadeInUp 1.2s ease-out forwards; /* Animáció alkalmazása */
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.8);
         }
 
         .hero p {
@@ -141,30 +127,59 @@
             text-transform: uppercase;
             color: var(--accent-color);
             margin-top: 20px;
-            text-shadow: 0 0 10px rgba(0,255,255,0.3);
-            animation: fadeInUp 1.5s ease-out forwards; /* Kicsit lassabb beúszás a szövegnek */
+        }
+
+        /* Galéria Szekció */
+        .gallery-section {
+            padding: 100px 10%;
+            background-color: #0a0a0a;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.1);
+            aspect-ratio: 16 / 9;
+            cursor: pointer;
+            transition: border 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* Minimalista animáció: ráközelítés + keret */
+        .gallery-item:hover {
+            border-color: var(--accent-color);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
         }
 
         /* Kapcsolat Szekció */
         .content-section {
-            padding: 120px 10%;
+            padding: 100px 10%;
             text-align: center;
-            background: #080808;
-        }
-
-        .content-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--accent-color);
+            background: #0e0e0e;
         }
 
         /* Footer */
         footer {
             padding: 60px 20px;
             text-align: center;
-            background: #000;
-            border-top: 1px solid rgba(0, 255, 255, 0.05);
+            background: #050505;
         }
 
         .footer-socials {
@@ -174,28 +189,14 @@
             gap: 25px;
         }
 
-        .footer-socials a {
-            color: #fff;
-            font-size: 1.5rem;
-            transition: 0.3s;
-        }
-
-        .footer-socials a:hover {
-            color: var(--accent-color);
-        }
-
-        .copyright {
-            font-size: 0.7rem;
-            color: #444;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+        .footer-socials a { color: #fff; font-size: 1.5rem; transition: 0.3s; }
+        .footer-socials a:hover { color: var(--accent-color); }
 
         @media (max-width: 900px) {
             nav { padding: 15px 20px; flex-direction: column; }
             .social-icons { margin: 15px 0 0 0; }
             nav ul li { margin: 10px 0; }
-            .hero h1 { font-size: 3.2rem; }
+            .hero h1 { font-size: 3.5rem; }
         }
     </style>
 </head>
@@ -206,6 +207,7 @@
         <div class="nav-content">
             <ul>
                 <li><a href="#kezdolap">Kezdőlap</a></li>
+                <li><a href="#galeria">Galéria</a></li>
                 <li><a href="#kapcsolat">Kapcsolat</a></li>
             </ul>
             <div class="social-icons">
@@ -222,10 +224,22 @@
         <p>Modern | Kifinomult | Dallamos</p>
     </section>
 
+    <section id="galeria" class="gallery-section">
+        <h2 style="color: var(--accent-color); font-family: 'Playfair Display', serif; font-size: 2.2rem; letter-spacing: 3px;">GALÉRIA</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/nCpRNgff/kingfishers-klip2025-1.jpg" alt="Kingfishers 1">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/jC40WzsY/kingfishers-klip2025-2.jpg" alt="Kingfishers 2">
+            </div>
+            </div>
+    </section>
+
     <section id="kapcsolat" class="content-section">
-        <h2>Kapcsolat</h2>
+        <h2 style="color: var(--accent-color); font-family: 'Playfair Display', serif; font-size: 2.2rem; letter-spacing: 3px;">KAPCSOLAT</h2>
         <p>Koncertszervezés és management:</p>
-        <p style="color: var(--accent-color); font-size: 1.2rem; margin-top: 15px; font-weight: bold; letter-spacing: 1px;">kingfishersband@gmail.com</p>
+        <p style="color: var(--accent-color); font-size: 1.2rem; margin-top: 10px; font-weight: bold;">kingfishersband@gmail.com</p>
     </section>
 
     <footer>
